@@ -123,12 +123,14 @@
         </div>
     </div>
     @section('script')
-    $(function () {
-        $('#datetimepicker3').datetimepicker({
-            format: 'LT'
-
+    <script>
+        $(function () {
+            $('#datetimepicker3').datetimepicker({
+                format: 'LT'
+            });
+            if($('.datetimepicker').length>0){$('.datetimepicker').datetimepicker({format:'DD/MM/YYYY',icons:{up:"fa fa-angle-up",down:"fa fa-angle-down",next:'fa fa-angle-right',previous:'fa fa-angle-left'}});$('.datetimepicker').on('dp.show',function(){$(this).closest('.table-responsive').removeClass('table-responsive').addClass('temp');}).on('dp.hide',function(){$(this).closest('.temp').addClass('table-responsive').removeClass('temp')});}
         });
-    });
+    </script>
     @endsection
 @endsection
 
