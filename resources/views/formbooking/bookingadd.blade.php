@@ -6,12 +6,16 @@
             <div class="row align-items-center">
                 <div class="col">
                     <h3 class="page-title mt-5">Add Booking</h3>
+
                 </div>
             </div>
         </div>
+        {!! Toastr::message() !!}
+
         <div class="row">
             <div class="col-lg-12">
-                <form action="{{url('form/booking/save')}}" method="post">@csrf
+                
+                <form action="{{url('form/booking/save')}}" method="post" enctype="multipart/form-data">@csrf
                     <div class="row formtype">
                     {{-- <div class="col-md-4">
                         <div class="form-group">
@@ -24,8 +28,8 @@
                             <label>Name</label>
                             <select class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" name="name">
                                 <option>Select </option>
-                                <option value="">Jennifer Robinson</option>
-                                <option value="">Terry Baker</option>
+                                <option value="Jennifer">Jennifer Robinson</option>
+                                <option value="Terry">Terry Baker</option>
                             </select>
                         </div>
                     </div>
@@ -34,25 +38,25 @@
                             <label>Room Type</label>
                             <select class="form-control @error('room_type') is-invalid @enderror" name="room_type" value="{{ old('room_type') }}" >
                                 <option value="">Select</option>
-                                <option value="">Single</option>
-                                <option value="">Double</option>
-                                <option value="">Quad</option>
-                                <option value="">King</option>
-                                <option value="">Suite</option>
-                                <option value="">Villa</option>
+                                <option value="Single">Single</option>
+                                <option value="Double">Double</option>
+                                <option value="Quad">Quad</option>
+                                <option value="King">King</option>
+                                <option value="Suite">Suite</option>
+                                <option value="Villa">Villa</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Total Members</label>
-                            <select class="form-control @error('room_type') is-invalid @enderror" name="total_members" value="{{ old('total_members') }}">
+                            <select class="form-control @error('total_numbers') is-invalid @enderror" name="total_numbers" value="{{ old('total_numbers') }}">
                                 <option>Select</option>
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                                <option value="">5</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
                             </select>
                         </div>
                     </div>
